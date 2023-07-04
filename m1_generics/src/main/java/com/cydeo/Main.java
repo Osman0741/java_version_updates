@@ -1,6 +1,8 @@
 package com.cydeo;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
@@ -28,6 +30,12 @@ public class Main {
        // liverpool.addPlayer(pat);
         liverpool.addPlayer(beckham);
 
+        System.out.println("========================================");
+
+        Integer[] array = {1,2,3,4,5};
+
+        swap(array,0,2);
+
 
 
 
@@ -38,6 +46,16 @@ public class Main {
             System.out.println(i*2);
 
         }
+
+    }
+    private static <T> void swap(T[] array, int a, int b){
+        ArrayList<T> list = new ArrayList<>();
+        for (T t : array) {
+            list.add(t);
+        }
+
+        Collections.swap(list,a,b);
+        System.out.println(list);
 
     }
 }
