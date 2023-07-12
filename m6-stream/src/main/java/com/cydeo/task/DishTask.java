@@ -40,7 +40,11 @@ public class DishTask {
                 .map(Dish::getName)
                 .forEach(System.out::println);
 
+       long n= DishData.getAll().stream()
+                .map(Dish::getName)
+                .count();
 
+        System.out.println(n);
 
 
     }
