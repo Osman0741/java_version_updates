@@ -2,6 +2,7 @@ package com.cydeo;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamOperations {
@@ -35,5 +36,18 @@ public class StreamOperations {
                 .filter(i->i%2==0)
                 .skip(1)
                 .forEach(System.out::println);
+
+        System.out.println("Map");
+        list.stream()
+                .filter(i->i%2==0)
+                .map(i->i*3)
+                .forEach(System.out::println);
+
+        List<String> words = Arrays.asList("JAVA","APPLE","HONDA","DEVELOPER" );
+
+        words.stream()
+                .map( st->st.length())
+                .forEach(System.out::println);
+
     }
 }
