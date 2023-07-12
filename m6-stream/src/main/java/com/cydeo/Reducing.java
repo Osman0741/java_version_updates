@@ -23,12 +23,16 @@ public class Reducing {
                    .reduce(Integer::sum).get();
         System.out.println(calTotal);
 
-      Optional<Integer> min=  numbers.stream().reduce(Integer::min);
+       Optional<Integer> min=  numbers.stream().reduce(Integer::min);
        Optional<Integer> max = numbers.stream().reduce(Integer::max);
        Optional<Integer> sum = numbers.stream().reduce(Integer::sum);
 
         System.out.println("min = " + min.get());
         System.out.println("max = " + max.get());
         System.out.println("sum = " + sum.get());
+
+        System.out.println("Count");
+        long dishCount = DishData.getAll().stream().count();
+        System.out.println(dishCount);
     }
 }
